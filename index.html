@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+      .move-handle {
+        cursor: move;
+        cursor: -webkit-grabbing;
+        width: 16px;
+        margin-right: 4px;
+      }
+      .list-group {
+        background-color: lightgreen;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h3>Group 1</h3>
+      <div id="sortableList1" class="list-group">
+        <div class="list-group-item">
+          <img class="move-handle" src="icon.png" aria-hidden="true" />
+          Group 1 - List Item 1
+        </div>
+        <div class="list-group-item">
+          <img class="move-handle" src="icon.png" aria-hidden="true" />
+          Group 1 - List Item 2
+        </div>
+        <div class="list-group-item">
+          <img class="move-handle" src="icon.png" />
+          Group 1 - List Item 3
+        </div>
+      </div>
+
+      <h3>Group 2 (A)</h3>
+      <div id="sortableList2a" class="list-group">
+        <div class="list-group-item">
+          <img class="move-handle" src="icon.png" aria-hidden="true" />
+          Group 2A - List Item 1
+        </div>
+        <div class="list-group-item">
+          <img class="move-handle" src="icon.png" aria-hidden="true" />
+          Group 2A - List Item 2
+        </div>
+        <div class="list-group-item">
+          <img class="move-handle" src="icon.png" />
+          Group 2A - List Item 3
+        </div>
+      </div>
+
+      <h3>Group 2 (B)</h3>
+      <div id="sortableList2b" class="list-group">
+        <div class="list-group-item">
+          <img class="move-handle" src="icon.png" aria-hidden="true" />
+          Group 2B - List Item 1
+        </div>
+        <div class="list-group-item">
+          <img class="move-handle" src="icon.png" aria-hidden="true" />
+          Group 2B - List Item 2
+        </div>
+        <div class="list-group-item">
+          <img class="move-handle" src="icon.png" />
+          Group 2B - List Item 3
+        </div>
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script>
+      $(function() {
+        const g1 = document.getElementById('sortableList1');
+        Sortable.create(g1, {
+          group: 'group-1',
+          handle: '.move-handle',
+          animation: 150
+        });
+
+        const g2a = document.getElementById('sortableList2a');
+        Sortable.create(g2a, {
+          group: 'group-2',
+          handle: '.move-handle',
+          animation: 150
+        });
+
+        const g2b = document.getElementById('sortableList2b');
+        Sortable.create(g2b, {
+          group: 'group-2',
+          handle: '.move-handle',
+          animation: 150
+        });
+      });
+    </script>
+  </body>
+</html>
